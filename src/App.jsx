@@ -6,6 +6,9 @@ function App() {
     <>
       Hello World.
       gj
+      <div>
+        <img src="" alt='' ></img>
+      </div>
     </>
   )
 }
