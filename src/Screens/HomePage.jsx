@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import CoinCard from "../components/CoinCard";
 import { useEthereum } from "../contexts/MetamaskProvider";
 import { useSnackbar } from "notistack";
+import FAQ from "../components/FAQ";
 
 function HomePage() {
   const { eth } = useEthereum();
@@ -68,29 +69,39 @@ function HomePage() {
                 Connect Your Wallet
               </Button>
             }
-
-            <div className="m-auto ml-10 flex gap-4">
-              <img src="/ethereum-svgrepo-com.svg" className="w-[25px]" />
-              <p>
-                {balance}
-              </p>
-            </div>
-
+            {balance &&
+              <div className="m-auto ml-10 flex gap-4">
+                <img src="/ethereum-svgrepo-com.svg" className="w-[25px]" />
+                <p>
+                  {balance}
+                </p>
+              </div>
+            }
           </div>
         </div>
         <div className="flex flex-col gap-4">
-          <img className="md:max-w-[550px] max-w-[400px] mx-auto" src="/undraw_shopping_app_flsj (1).svg" />
+          <img
+            className="md:max-w-[550px] max-w-[400px] mx-auto"
+            src="/undraw_shopping_app_flsj (1).svg"
+          />
         </div>
-        <a href="#scrollHere" className="scroll-down-anim rounded-full absolute bottom-10 left-[50%]">
+        <a
+          href="#scrollHere"
+          className="scroll-down-anim rounded-full absolute bottom-10 left-[50%]"
+        >
           <div className="grow-animation"></div>
           <img className="h-[50px]" src="/down-arrow.png" />
         </a>
       </div>
 
       {/* FAQs */}
-      <div>
-        <div>
-
+      <div className="text-white w-full flex flex-col">
+        <div className="mx-auto w-[900px] mb-9">
+          <div className="text-center text-3xl my-5 py-auto">
+            Frequently Asked Questions
+          </div>
+          <FAQ></FAQ>
+          <Divider />
         </div>
       </div>
 
@@ -111,7 +122,9 @@ function HomePage() {
               src="https://avatars.githubusercontent.com/u/31966594?v=4"
             />
             <p className="text-white mt-4">Prashanth Kumar</p>
-            <p className="text-xs text-white text-center mb-10">Loop Sr. Executive</p>
+            <p className="text-xs text-white text-center mb-10">
+              Loop Sr. Executive
+            </p>
           </div>
         </div>
       </div>
