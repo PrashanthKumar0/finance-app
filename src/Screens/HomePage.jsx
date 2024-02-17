@@ -5,7 +5,7 @@ import CoinCard from "../components/CoinCard";
 function HomePage() {
   return (
     <>
-      <div className="h-[100vh] text-white z-1 bg-black/30 flex flex-col md:flex-row flex-wrap justify-around items-center">
+      <div className="relative h-[100vh] -mt-[72px] text-white z-1 bg-black/30 flex flex-col md:flex-row flex-wrap justify-around items-center">
         <div className="flex flex-col gap-4">
           <div className="font-bold text-5xl ">
             CryptoMart 
@@ -13,6 +13,7 @@ function HomePage() {
           <div className="mx-2">
             <p>Discover A New World of Shopping</p>
           </div>
+          <div className="flex flex-row">
           <Button
             variant="solid"
             color="primary"
@@ -21,6 +22,15 @@ function HomePage() {
             {" "}
             Shop Now
           </Button>
+          <Button
+            variant="solid"
+            color="primary"
+            className="mt-10 inline-block mr-auto"
+          >
+            {" "}
+            Connect Your Wallet
+          </Button>
+          </div>
         </div>
         <div className="flex flex-col gap-4">
           <img className="md:max-w-[550px] max-w-[400px] mx-auto" src="/undraw_shopping_app_flsj (1).svg" />
@@ -31,150 +41,10 @@ function HomePage() {
         </a>
       </div>
 
-      {/* CARDS */}
-      <div className="flex flex-row justify-evenly h-[100vh] px-15" id="scrollHere">
-        <div className="my-auto">
-          <ScrollShadow className="w-[300px] h-[275px] overflow-scroll text-white flex flex-col">
-            <div className="mx-auto sticky top-0 bg-gray-800 w-full text-center py-2 mb-2">
-              Cryptos
-            </div>
-
-            <CoinCard
-              coinName={"BitCoin"}
-              rate={100}
-              src={
-                "https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-              }
-            />
-            <Divider className="w-[85%] mx-auto" />
-            <CoinCard
-              coinName={"DodgeCoin"}
-              rate={50}
-              src={
-                "https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-              }
-            />
-            <Divider className="w-[85%] mx-auto" />
-            <CoinCard
-              coinName={"shwtk"}
-              rate={300}
-              src={
-                "https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-              }
-            />
-            <Divider className="w-[85%] mx-auto" />
-            <CoinCard
-              coinName={"bat"}
-              rate={200}
-              src={
-                "https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-              }
-            />
-            <Divider className="w-[85%] mx-auto" />
-            <CoinCard
-              coinName={"bat"}
-              rate={200}
-              src={
-                "https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-              }
-            />
-          </ScrollShadow>
-        </div>
-
-        <div className="my-auto">
-          <ScrollShadow className="w-[300px] h-[275px] overflow-scroll text-white flex flex-col">
-            <div className="mx-auto sticky top-0 bg-gray-800 w-full text-center py-2 mb-2">
-              Currency
-            </div>
-
-            <CoinCard
-              coinName={"BitCoin"}
-              rate={100}
-              src={
-                "https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-              }
-            />
-            <Divider className="w-[85%] mx-auto" />
-            <CoinCard
-              coinName={"DodgeCoin"}
-              rate={50}
-              src={
-                "https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-              }
-            />
-            <Divider className="w-[85%] mx-auto" />
-            <CoinCard
-              coinName={"shwtk"}
-              rate={300}
-              src={
-                "https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-              }
-            />
-            <Divider className="w-[85%] mx-auto" />
-            <CoinCard
-              coinName={"bat"}
-              rate={200}
-              src={
-                "https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-              }
-            />
-            <Divider className="w-[85%] mx-auto" />
-            <CoinCard
-              coinName={"bat"}
-              rate={200}
-              src={
-                "https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-              }
-            />
-          </ScrollShadow>
-        </div>
-
-        <div className="my-auto">
-          <ScrollShadow className="w-[300px] h-[275px] overflow-scroll text-white flex flex-col">
-            <div className="mx-auto sticky top-0 bg-gray-800 w-full text-center py-2 mb-2">
-              Stock
-            </div>
-
-            <CoinCard
-              coinName={"BitCoin"}
-              rate={100}
-              src={
-                "https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-              }
-            />
-            <Divider className="w-[85%] mx-auto" />
-            <CoinCard
-              coinName={"DodgeCoin"}
-              rate={50}
-              src={
-                "https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-              }
-            />
-            <Divider className="w-[85%] mx-auto" />
-            <CoinCard
-              coinName={"shwtk"}
-              rate={300}
-              src={
-                "https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-              }
-            />
-            <Divider className="w-[85%] mx-auto" />
-            <CoinCard
-              coinName={"bat"}
-              rate={200}
-              src={
-                "https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-              }
-            />
-            <Divider className="w-[85%] mx-auto" />
-            <CoinCard
-              coinName={"bat"}
-              rate={200}
-              src={
-                "https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-              }
-            />
-          </ScrollShadow>
+      {/* FAQs */}
+      <div>
+        <div>
+          
         </div>
       </div>
 
