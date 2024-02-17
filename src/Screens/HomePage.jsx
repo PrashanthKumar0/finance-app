@@ -5,7 +5,7 @@ import CoinCard from "../components/CoinCard";
 function HomePage() {
   return (
     <>
-      <div className="relative h-[100vh] -mt-[72px] text-white z-1 bg-black/30 flex flex-col md:flex-row flex-wrap justify-around items-center">
+      <div className="relative h-[100vh] -mt-[36px] md:-mt-[72px] text-white z-1 bg-black/30 flex flex-col md:flex-row flex-wrap justify-around items-center">
         <div className="flex flex-col gap-4">
           <div className="font-bold text-5xl ">
             CryptoMart 

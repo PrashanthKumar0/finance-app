@@ -7,10 +7,9 @@ import ProductPage from './Screens/ProductPage'
 import { useEthereum } from './contexts/MetamaskProvider'
 
 function App() {
-  const {ethereum} = useEthereum();
-  console.log(ethereum);
-
+  const {eth} = useEthereum();
   
+
 
   return (
     <BrowserRouter>
