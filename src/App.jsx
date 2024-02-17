@@ -6,6 +6,7 @@ import Layout from './Layout'
 import ProductPage from './Screens/ProductPage'
 import { useEthereum } from './contexts/MetamaskProvider'
 
+
 function App() {
   const {ethereum} = useEthereum();
   console.log(ethereum);

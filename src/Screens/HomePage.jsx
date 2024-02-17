@@ -1,50 +1,59 @@
 import { Button, Divider, ScrollShadow } from "@nextui-org/react";
 import React, { useRef } from "react";
 import CoinCard from "../components/CoinCard";
+import FAQ from "../components/FAQ";
 
 function HomePage() {
   return (
     <>
       <div className="relative h-[100vh] -mt-[72px] text-white z-1 bg-black/30 flex flex-col md:flex-row flex-wrap justify-around items-center">
         <div className="flex flex-col gap-4">
-          <div className="font-bold text-5xl ">
-            CryptoMart 
-          </div>
+          <div className="font-bold text-5xl ">CryptoMart</div>
           <div className="mx-2">
             <p>Discover A New World of Shopping</p>
           </div>
           <div className="flex flex-row">
-          <Button
-            variant="solid"
-            color="primary"
-            className="mt-10 inline-block mr-auto"
-          >
-            {" "}
-            Shop Now
-          </Button>
-          <Button
-            variant="solid"
-            color="primary"
-            className="mt-10 inline-block mr-auto"
-          >
-            {" "}
-            Connect Your Wallet
-          </Button>
+            <Button
+              variant="solid"
+              color="primary"
+              className="mt-10 inline-block mr-auto"
+            >
+              {" "}
+              Shop Now
+            </Button>
+            <Button
+              variant="solid"
+              color="primary"
+              className="mt-10 inline-block mr-auto"
+            >
+              {" "}
+              Connect Your Wallet
+            </Button>
           </div>
         </div>
         <div className="flex flex-col gap-4">
-          <img className="md:max-w-[550px] max-w-[400px] mx-auto" src="/undraw_shopping_app_flsj (1).svg" />
+          <img
+            className="md:max-w-[550px] max-w-[400px] mx-auto"
+            src="/undraw_shopping_app_flsj (1).svg"
+          />
         </div>
-        <a href="#scrollHere" className="scroll-down-anim rounded-full absolute bottom-10 left-[50%]">
+        <a
+          href="#scrollHere"
+          className="scroll-down-anim rounded-full absolute bottom-10 left-[50%]"
+        >
           <div className="grow-animation"></div>
           <img className="h-[50px]" src="/down-arrow.png" />
         </a>
       </div>
 
       {/* FAQs */}
-      <div>
-        <div>
-          
+      <div className="text-white w-full flex flex-col">
+        <div className="mx-auto w-[900px] mb-9">
+          <div className="text-center text-3xl my-5 py-auto">
+            Frequently Asked Questions
+          </div>
+          <FAQ></FAQ>
+          <Divider />
         </div>
       </div>
 
@@ -65,7 +74,9 @@ function HomePage() {
               src="https://avatars.githubusercontent.com/u/31966594?v=4"
             />
             <p className="text-white mt-4">Prashanth Kumar</p>
-            <p className="text-xs text-white text-center mb-10">Loop Sr. Executive</p>
+            <p className="text-xs text-white text-center mb-10">
+              Loop Sr. Executive
+            </p>
           </div>
         </div>
       </div>
