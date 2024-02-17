@@ -1,35 +1,76 @@
 import { Button, Divider, ScrollShadow } from "@nextui-org/react";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import CoinCard from "../components/CoinCard";
+import { useEthereum } from "../contexts/MetamaskProvider";
+import { useSnackbar } from "notistack";
 
 function HomePage() {
+  const { eth } = useEthereum();
+  const [balance, setBalance] = useState(null);
+  const { enqueueSnackbar } = useSnackbar();
+
+  const connectWallet = async () => {
+    if (!eth) {
+      enqueueSnackbar('Install A wallet.', { variant: 'error' });
+      return;
+    }
+
+    try {
+      enqueueSnackbar('requesting wallet.');
+      const accounts = await eth.request({ method: 'eth_requestAccounts' });
+      if (accounts.length == 0) {
+        enqueueSnackbar('no accounts selected.', { variant: 'warning' });
+        return;
+      }
+
+      enqueueSnackbar(`will use ${accounts[0]}`, { variant: 'success' });
+      const wei_hex = await eth.request({ method: 'eth_getBalance', params: [accounts[0], 'latest'] });
+      const eth_bal = (parseInt(wei_hex, 16) / 10 ** 18).toFixed(4);
+
+      setBalance(eth_bal + " ETH");
+    } catch (err) {
+      enqueueSnackbar(`wallet denied`, { variant: 'error' });
+    }
+  }
+
+
   return (
     <>
       <div className="relative h-[100vh] -mt-[36px] md:-mt-[72px] text-white z-1 bg-black/30 flex flex-col md:flex-row flex-wrap justify-around items-center">
         <div className="flex flex-col gap-4">
           <div className="font-bold text-5xl ">
-            CryptoMart 
+            CryptoMart
           </div>
           <div className="mx-2">
             <p>Discover A New World of Shopping</p>
           </div>
-          <div className="flex flex-row">
-          <Button
-            variant="solid"
-            color="primary"
-            className="mt-10 inline-block mr-auto"
-          >
-            {" "}
-            Shop Now
-          </Button>
-          <Button
-            variant="solid"
-            color="primary"
-            className="mt-10 inline-block mr-auto"
-          >
-            {" "}
-            Connect Your Wallet
-          </Button>
+          <div className="flex flex-row items-center justify-center mt-10">
+
+            <Button
+              variant="solid"
+              color="primary"
+              className="inline-block m-auto mr-8"
+            >
+              {" "}
+              Shop Now
+            </Button>
+
+            {!balance && eth &&
+              <Button
+                variant="solid"
+                color="primary"
+                className="inline-block m-auto"
+                onClick={connectWallet}
+              >
+                {" "}
+                Connect Your Wallet
+              </Button>
+            }
+
+            <p className="m-auto ml-10">
+              {balance}
+            </p>
+
           </div>
         </div>
         <div className="flex flex-col gap-4">
@@ -44,7 +85,7 @@ function HomePage() {
       {/* FAQs */}
       <div>
         <div>
-          
+
         </div>
       </div>
 

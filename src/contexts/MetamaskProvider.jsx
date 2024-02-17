@@ -9,13 +9,13 @@ export const MetamaskProvider = ({ children }) => {
     const [eth, setEth] = useState(null);
 
     addEventListener('load', () => {
-        if ('ethereum' in window){
+        if ('ethereum' in window) {
             setEth(ethereum);
         }
     })
 
     return (
-        <MetamaskContext.Provider value={{ eth }}>
+        <MetamaskContext.Provider value={{ eth}}>
             {children}
         </MetamaskContext.Provider>
     )
