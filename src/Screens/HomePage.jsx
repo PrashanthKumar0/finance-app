@@ -96,12 +96,11 @@ function HomePage() {
 
       {/* FAQs */}
       <div className="text-white w-full flex flex-col">
-        <div className="mx-auto w-[900px] mb-9">
+        <div className="mx-auto md:w-[900px] w-full px-8 mb-9">
           <div className="text-center text-3xl my-5 py-auto">
             Frequently Asked Questions
           </div>
           <FAQ></FAQ>
-          <Divider />
         </div>
       </div>
 
