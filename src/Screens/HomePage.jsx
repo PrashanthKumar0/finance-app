@@ -5,14 +5,13 @@ import CoinCard from "../components/CoinCard";
 function HomePage() {
   return (
     <>
-      <div className="h-[100vh] text-white backdrop-blur-xl z-1 bg-black/30 flex flex-col md:flex-row flex-wrap justify-around items-center">
+      <div className="h-[100vh] text-white z-1 bg-black/30 flex flex-col md:flex-row flex-wrap justify-around items-center">
         <div className="flex flex-col gap-4">
           <div className="font-bold text-5xl ">
-            Empowering <br />
-            Your Financial Journey
+            CryptoMart 
           </div>
-          <div>
-            <p></p>
+          <div className="mx-2">
+            <p>Discover A New World of Shopping</p>
           </div>
           <Button
             variant="solid"
@@ -20,11 +19,11 @@ function HomePage() {
             className="mt-10 inline-block mr-auto"
           >
             {" "}
-            Get Started
+            Shop Now
           </Button>
         </div>
-        <div className="flex flex-col gap-4 ">
-          <img className="max-w-[500px]" src="/chart.png" />
+        <div className="flex flex-col gap-4">
+          <img className="md:max-w-[550px] max-w-[400px] mx-auto" src="/undraw_shopping_app_flsj (1).svg" />
         </div>
         <a href="#scrollHere" className="scroll-down-anim rounded-full absolute bottom-10 left-[50%]">
           <div className="grow-animation"></div>
