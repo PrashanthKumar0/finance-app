@@ -7,8 +7,11 @@
   line-height: 1.5;
   font-weight: 400;
   position: relative;
+  scroll-behavior: smooth;
 }
-
+::-webkit-scrollbar{
+  display: none;
+}
 a {
   font-weight: 500;
   color: #646cff;
@@ -22,4 +25,36 @@ a:hover {
 body {
   margin: 0;
   background: radial-gradient(circle at 150% 150%, midnightblue, black);
+}
+
+.scroll-down-anim{
+  animation: 1.5s cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite alternate hover;
+}
+
+.grow-animation{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background: white;
+  animation: 1s linear infinite grow;
+}
+
+@keyframes hover {
+  0%{
+    transform: translateY(-50%);
+  }
+  100%{
+    transform: translateY(50%);
+  }
+}
+@keyframes grow {
+  0%{
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  100%{
+    opacity: 0;
+    transform: scale(4);
+  }
 }
