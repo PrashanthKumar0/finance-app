@@ -47,9 +47,11 @@ function HomePage() {
           <div className="flex flex-row items-center justify-center mt-10">
 
             <Button
+              as="a"
+              href="/Products"
               variant="solid"
               color="primary"
-              className="inline-block m-auto mr-8"
+              className="inline-block m-auto mr-8 flex items-center justify-center hover:text-white"
             >
               {" "}
               Shop Now
@@ -67,9 +69,12 @@ function HomePage() {
               </Button>
             }
 
-            <p className="m-auto ml-10">
-              {balance}
-            </p>
+            <div className="m-auto ml-10 flex gap-4">
+              <img src="/ethereum-svgrepo-com.svg" className="w-[25px]" />
+              <p>
+                {balance}
+              </p>
+            </div>
 
           </div>
         </div>
