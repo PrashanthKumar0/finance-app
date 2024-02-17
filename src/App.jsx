@@ -4,8 +4,13 @@ import HomePage from './Screens/HomePage'
 import AboutPage from './Screens/AboutPage'
 import Layout from './Layout'
 import ProductPage from './Screens/ProductPage'
+import { useEthereum } from './contexts/MetamaskProvider'
 
 function App() {
+  const {ethereum} = useEthereum();
+  console.log(ethereum);
+
+  
 
   return (
     <BrowserRouter>
