@@ -6,6 +6,8 @@ import { useSnackbar } from "notistack";
 import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
 import ReachUs from "../components/ReachUs";
+import "../cursor"
+
 
 function HomePage() {
   const { eth } = useEthereum();
