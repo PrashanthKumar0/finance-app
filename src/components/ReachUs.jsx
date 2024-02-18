@@ -124,46 +124,46 @@ function ReachUs() {
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-first-name"
+              // for="grid-first-name"
               >
                 First Name
+                <input
+                  className="appearance-none block w-full bg-gray-700 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-900"
+                  // id="grid-first-name"
+                  type="text"
+                  placeholder="Jane"
+                />
               </label>
-              <input
-                className="appearance-none block w-full bg-gray-700 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-900"
-                id="grid-first-name"
-                type="text"
-                placeholder="Jane"
-              />
             </div>
             <div className="w-full md:w-1/2 px-3">
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-last-name"
+              // for="grid-last-name"
               >
                 Last Name
+                <input
+                  className="appearance-none block w-full bg-gray-700 text-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-gray-900 focus:border-gray-500"
+                  // id="grid-last-name"
+                  type="text"
+                  placeholder="Doe"
+                />
               </label>
-              <input
-                className="appearance-none block w-full bg-gray-700 text-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-gray-900 focus:border-gray-500"
-                id="grid-last-name"
-                type="text"
-                placeholder="Doe"
-              />
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full px-3">
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-password"
+              // for="grid-password"
               >
                 Email Address
+                <input
+                  className="appearance-none block w-full bg-gray-700 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-900 focus:border-gray-500"
+                  id="grid-email"
+                  type="email"
+                  placeholder="********@*****.**"
+                />
               </label>
-              <input
-                className="appearance-none block w-full bg-gray-700 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-900 focus:border-gray-500"
-                id="grid-email"
-                type="email"
-                placeholder="********@*****.**"
-              />
             </div>
           </div>
 
@@ -171,14 +171,14 @@ function ReachUs() {
             <div className="w-full px-3">
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-password"
+              // for="grid-password"
               >
                 Your Message
+                <textarea
+                  rows="10"
+                  className="appearance-none block w-full bg-gray-700 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-900 focus:border-gray-500"
+                ></textarea>
               </label>
-              <textarea
-                rows="10"
-                className="appearance-none block w-full bg-gray-700 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-900 focus:border-gray-500"
-              ></textarea>
             </div>
             <div className="flex justify-between w-full px-3">
               <div className="md:flex md:items-center">

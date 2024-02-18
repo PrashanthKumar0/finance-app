@@ -46,7 +46,7 @@ function HomePage() {
     <>
       <div className="relative h-[100vh] -mt-[36px] md:-mt-[72px] text-white z-1 bg-black/30 flex flex-col md:flex-row flex-wrap justify-around items-center">
         <ParticlesBg className="bg-black/80 absolute top-0 left-0 z-1 pointer-events-none" />
-        <div className="flex flex-col gap-4">
+        <div className="z-10 flex flex-col gap-4">
           <div className="font-bold text-5xl ">CryptoMart</div>
           <div className="mx-2">
             <p>Discover A New World of Shopping</p>
@@ -82,7 +82,7 @@ function HomePage() {
             )}
           </div>
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="z-10 flex flex-col gap-4">
           <img
             className="max-w-[300px]  md:max-w-[550px] max-w-[400px] mx-auto"
             src="/undraw_shopping_app_flsj (1).svg"
@@ -92,7 +92,7 @@ function HomePage() {
           onClick={() => {
             window.scrollBy({ top: innerHeight - 72, behavior: 'smooth' });
           }}
-          className="cursor-pointer scroll-down-anim rounded-full absolute bottom-10 left-[50%]"
+          className="z-10 cursor-pointer scroll-down-anim rounded-full absolute bottom-10 left-[50%]"
         >
           <div className="grow-animation"></div>
           <img className="h-[50px]" src="/down-arrow.png" />
