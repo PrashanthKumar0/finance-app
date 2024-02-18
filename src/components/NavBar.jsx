@@ -71,9 +71,6 @@ function NavBar() {
             <PopoverContent className="w-[240px]">
               {(titleProps) => (
                 <div className="px-1 py-2 w-full">
-                  <p className="text-small font-bold text-foreground" {...titleProps}>
-                    Dimensions
-                  </p>
                   <div className="mt-2 flex flex-col gap-2 w-full">
                     <Button size="sm" variant="bordered" as="a" href="/">Home</Button>
                     <Button size="sm" variant="bordered" as="a" href="/Products">Products</Button>
