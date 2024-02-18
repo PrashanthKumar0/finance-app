@@ -20,6 +20,7 @@ function HomePage() {
     setTimeout(async () => {
       if (!('ethereum' in window)) {
         enqueueSnackbar('Seems Like You dont have Metamask?', { variant: 'warning' });
+        enqueueSnackbar('Install A wallet extension (Metamask)', { variant: 'info' });
       }
     }, 2000);
   }, [eth]);
