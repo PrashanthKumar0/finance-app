@@ -12,9 +12,9 @@ function ReachUs() {
             Get In <span className="text-blue-600">Touch</span>
           </h3>
           <p className="mt-4 leading-7 text-gray-400">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s.
+            Welcome to the Cryptomart Reach Us page! We're here to assist you
+            with any inquiries, feedback, or support you may need. Here's how
+            you can get in touch with us:
           </p>
 
           <div className="flex items-center mt-5">
@@ -39,7 +39,7 @@ function ReachUs() {
               </g>
             </svg>
             <span className="text-sm text-gray-400">
-              House #14, Street #12, Darulaman Road, Kabul, Afghanistan.
+              House #14, Street #12, New Delhi.
             </span>
           </div>
           <div className="flex items-center mt-5">
@@ -51,7 +51,7 @@ function ReachUs() {
               x="0px"
               y="0px"
               viewBox="0 0 60.002 60.002"
-            //   style="enable-background:new 0 0 60.002 60.002;"
+              //   style="enable-background:new 0 0 60.002 60.002;"
             >
               <g>
                 <path
@@ -101,7 +101,7 @@ function ReachUs() {
               x="0px"
               y="0px"
               viewBox="0 0 300.988 300.988"
-            //   style="enable-background:new 0 0 300.988 300.988;"
+              //   style="enable-background:new 0 0 300.988 300.988;"
             >
               <g>
                 <g>
@@ -117,14 +117,12 @@ function ReachUs() {
             <span className="text-sm text-gray-400">24/7</span>
           </div>
         </div>
-        <form
-          className="md:col-span-8 p-10"
-        >
+        <form className="md:col-span-8 p-10">
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              // for="grid-first-name"
+                // for="grid-first-name"
               >
                 First Name
                 <input
@@ -138,7 +136,7 @@ function ReachUs() {
             <div className="w-full md:w-1/2 px-3">
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              // for="grid-last-name"
+                // for="grid-last-name"
               >
                 Last Name
                 <input
@@ -154,7 +152,7 @@ function ReachUs() {
             <div className="w-full px-3">
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              // for="grid-password"
+                // for="grid-password"
               >
                 Email Address
                 <input
@@ -171,7 +169,7 @@ function ReachUs() {
             <div className="w-full px-3">
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              // for="grid-password"
+                // for="grid-password"
               >
                 Your Message
                 <textarea

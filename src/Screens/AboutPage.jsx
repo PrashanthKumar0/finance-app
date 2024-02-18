@@ -128,13 +128,19 @@ function AboutPage() {
           link2="https://www.linkedin.com/in/gajendra-kumar-118195175/"
         />
         <CoinCard
-          img="https://avatars.githubusercontent.com/u/31966594?v=4"
+          img="/shwetank.jpg"
           name="Shwetank Tripathi"
           role="Frontend Devloper"
           link1="https://github.com/Shwetank-Tripathi"
           link2="https://www.linkedin.com/in/shwetank-tripathi-4b1871189/"
         />
-        {/* <CoinCard /> */}
+        <CoinCard 
+          img="/Sanskar.jpg"
+          name="Sanskar Thakur"
+          role="Designer"
+          link1="https://github.com/SanskarThakur5251"
+          link2="https://www.linkedin.com/in/sanskar-thakur-94a664259/"
+        />
       </div>
     </div>
   );

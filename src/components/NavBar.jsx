@@ -6,7 +6,7 @@ function NavBar() {
     <nav className="z-10 w-full sticky top-0 left-0 bg-black/70 shadow-xl shadow-black/50 backdrop-blur-md">
       <div className="max-w-screen-xl flex flex-wrap gap-4 items-center justify-between  p-4">
         <a
-          href="https://flowbite.com/"
+          href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <img
