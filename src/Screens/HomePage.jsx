@@ -7,6 +7,7 @@ import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
 import ReachUs from "../components/ReachUs";
 import "../cursor"
+import ParticlesBg from "../components/ParticlesBg";
 
 
 function HomePage() {
@@ -44,6 +45,7 @@ function HomePage() {
   return (
     <>
       <div className="relative h-[100vh] -mt-[36px] md:-mt-[72px] text-white z-1 bg-black/30 flex flex-col md:flex-row flex-wrap justify-around items-center">
+        <ParticlesBg className="bg-black/80 absolute top-0 left-0 z-1 pointer-events-none" />
         <div className="flex flex-col gap-4">
           <div className="font-bold text-5xl ">CryptoMart</div>
           <div className="mx-2">
@@ -82,7 +84,7 @@ function HomePage() {
         </div>
         <div className="flex flex-col gap-4">
           <img
-            className="md:max-w-[550px] max-w-[400px] mx-auto"
+            className="max-w-[300px]  md:max-w-[550px] max-w-[400px] mx-auto"
             src="/undraw_shopping_app_flsj (1).svg"
           />
         </div>
