@@ -21,7 +21,7 @@ function HomePage() {
       if (!('ethereum' in window)) {
         enqueueSnackbar('Seems Like You dont have Metamask?', { variant: 'warning' });
       }
-    }, 3000);
+    }, 2000);
   }, [eth]);
 
 
