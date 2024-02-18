@@ -21,9 +21,13 @@
 
 body {
   margin: 0;
-  /* background: radial-gradient(circle at 150% 150%, midnightblue, black); */
   background: url('https://as1.ftcdn.net/v2/jpg/02/98/36/64/1000_F_298366478_95ulqYSXZD0M1W1XmL5NttWqINXM31W3.jpg');
   background-size: contain;
+  background-attachment: fixed;
+}
+
+* {
+  outline: none !important;
 }
 
 .scroll-down-anim {

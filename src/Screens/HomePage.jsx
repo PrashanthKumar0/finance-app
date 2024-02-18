@@ -85,13 +85,15 @@ function HomePage() {
             src="/undraw_shopping_app_flsj (1).svg"
           />
         </div>
-        <a
-          href="#scrollHere"
-          className="scroll-down-anim rounded-full absolute bottom-10 left-[50%]"
+        <div
+          onClick={() => {
+            window.scrollBy({ top: innerHeight - 72, behavior: 'smooth' });
+          }}
+          className="cursor-pointer scroll-down-anim rounded-full absolute bottom-10 left-[50%]"
         >
           <div className="grow-animation"></div>
           <img className="h-[50px]" src="/down-arrow.png" />
-        </a>
+        </div>
       </div>
 
       {/* FAQs */}
