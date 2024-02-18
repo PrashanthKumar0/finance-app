@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSnackbar } from "notistack";
-import { requestWalletConnection, useEthereum } from "../contexts/MetamaskProvider";
+import { useEthereum } from "../contexts/MetamaskProvider";
 import { api, vendorCryptoAddress } from "../constants";
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Checkbox, Input, Link, Textarea } from "@nextui-org/react";
 
@@ -17,11 +17,11 @@ function ProductCard({ id, url, name, price, }) {
   const [phone, setPhone] = useState('');
 
   const { eth } = useEthereum();
-  const snackbar = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar();
 
   const buyProduct = async () => {
     if (!eth) {
-      snackbar.enqueueSnackbar("Install A wallet.", { variant: "error" });
+      enqueueSnackbar("Install A wallet.", { variant: "error" });
       return;
     }
     try {
@@ -30,7 +30,7 @@ function ProductCard({ id, url, name, price, }) {
       if (!eth.isConnected()) {
         await requestWalletConnection();
         if (!eth.isConnected()) {
-          snackbar.enqueueSnackbar("Denied wallet access.", { variant: "error" });
+          enqueueSnackbar("Denied wallet access.", { variant: "error" });
           return;
         }
       }
@@ -61,9 +61,32 @@ function ProductCard({ id, url, name, price, }) {
       // openPopup();
       onOpen();
     } catch (err) {
-      snackbar.enqueueSnackbar("Transaction Canceled.", { variant: "warning" });
+      enqueueSnackbar("Transaction Canceled.", { variant: "warning" });
     }
   }
+
+  const requestWalletConnection = async () => {
+    try {
+      enqueueSnackbar("requesting wallet.");
+      const accounts = await eth.request({ method: "eth_requestAccounts" });
+      if (accounts.length == 0) {
+        enqueueSnackbar("no accounts selected.", { variant: "warning" });
+        return;
+      }
+
+      enqueueSnackbar(`will use ${accounts[0]}`, { variant: "success" });
+      const wei_hex = await eth.request({
+        method: "eth_getBalance",
+        params: [accounts[0], "latest"],
+      });
+      const eth_bal = (parseInt(wei_hex, 16) / 10 ** 18).toFixed(4);
+
+      setBalance(eth_bal + " ETH");
+    } catch (err) {
+      enqueueSnackbar(`wallet denied`, { variant: "error" });
+    }
+  }
+
 
 
   const makeOrder = async () => {
@@ -124,14 +147,12 @@ function ProductCard({ id, url, name, price, }) {
 
 
       {/* Content */}
-      <div className="w-[300px] max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-auto">
-        <a href="#">
-          <img
-            className="p-8 rounded-t-lg"
-            src={url}
-            alt="product image"
-          />
-        </a>
+      <div className="w-[300px] flex flex-col h-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-auto">
+        <img
+          className="p-8 rounded-t-lg my-auto object-contain"
+          src={url}
+          alt="product image"
+        />
         <div className="px-5 pb-5">
           <a href="#">
             <h5 className="text-sm font-semibold tracking-tight text-gray-900 dark:text-white">
