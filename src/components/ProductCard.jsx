@@ -17,7 +17,7 @@ function ProductCard({ id, url, name, price, }) {
   const [phone, setPhone] = useState('');
 
   const { eth } = useEthereum();
-  const { enqueueSnackbar } = useSnackbar();
+  const snackbar = useSnackbar();
 
   const buyProduct = async () => {
     if (!eth) {
@@ -67,14 +67,14 @@ function ProductCard({ id, url, name, price, }) {
 
   const requestWalletConnection = async () => {
     try {
-      enqueueSnackbar("requesting wallet.");
+      snackbar.enqueueSnackbar("requesting wallet.");
       const accounts = await eth.request({ method: "eth_requestAccounts" });
       if (accounts.length == 0) {
-        enqueueSnackbar("no accounts selected.", { variant: "warning" });
+        snackbar.enqueueSnackbar("no accounts selected.", { variant: "warning" });
         return;
       }
 
-      enqueueSnackbar(`will use ${accounts[0]}`, { variant: "success" });
+      snackbar.enqueueSnackbar(`will use ${accounts[0]}`, { variant: "success" });
       const wei_hex = await eth.request({
         method: "eth_getBalance",
         params: [accounts[0], "latest"],
@@ -83,7 +83,7 @@ function ProductCard({ id, url, name, price, }) {
 
       setBalance(eth_bal + " ETH");
     } catch (err) {
-      enqueueSnackbar(`wallet denied`, { variant: "error" });
+      snackbar.enqueueSnackbar(`wallet denied`, { variant: "error" });
     }
   }
 
