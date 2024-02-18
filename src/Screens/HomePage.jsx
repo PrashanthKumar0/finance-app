@@ -112,11 +112,11 @@ function HomePage() {
             <div className="text-center text-3xl my-5 py-auto">
               Frequently Asked Questions
             </div>
-            <FAQ></FAQ>
+            <FAQ/>
           </div>
         </div>
 
-        <Divider className="w-[800px] mx-auto" />
+        {/* <Divider className="w-[800px] mx-auto" /> */}
         {/* companies-trust */}
 
 
@@ -156,7 +156,7 @@ function HomePage() {
             </div>
           </div>
         </div> */}
-        <Divider className="w-[800px] mx-auto" />
+        {/* <Divider className="w-[800px] mx-auto" /> */}
         {/* Reach Us */}
         <ReachUs />
         {/* Footer */}
