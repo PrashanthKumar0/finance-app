@@ -1,4 +1,5 @@
 import { Button } from "@nextui-org/button";
+import { Input, Popover, PopoverContent, PopoverTrigger } from "@nextui-org/react";
 import React from "react";
 
 function NavBar() {
@@ -13,7 +14,7 @@ function NavBar() {
             src="https://flowbite.com/docs/images/logo.svg"
             className="h-8"
             alt="Flowbite Logo"
-          />    
+          />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
             CryptoMart
           </span>
@@ -58,6 +59,33 @@ function NavBar() {
             </li>
           </ul>
         </div>
+
+
+        <div className="md:hidden">
+          <Popover placement="bottom" showArrow offset={10}>
+            <PopoverTrigger>
+              <Button className="bg-transparent p-2" isIconOnly>
+                <img className="w-full" src="/menu.png" />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-[240px]">
+              {(titleProps) => (
+                <div className="px-1 py-2 w-full">
+                  <p className="text-small font-bold text-foreground" {...titleProps}>
+                    Dimensions
+                  </p>
+                  <div className="mt-2 flex flex-col gap-2 w-full">
+                    <Button size="sm" variant="bordered" as="a" href="/">Home</Button>
+                    <Button size="sm" variant="bordered" as="a" href="/Products">Products</Button>
+                    <Button size="sm" variant="bordered" as="a" href="/About">About Us</Button>
+                    <Button size="sm" className="premium-button" >Premium</Button>
+                  </div>
+                </div>
+              )}
+            </PopoverContent>
+          </Popover>
+        </div>
+
       </div>
     </nav>
   );
