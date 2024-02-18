@@ -49,12 +49,11 @@ function HomePage() {
   return (
     <>
       <ScrollIndecator />
-      <div className="relative blur-bg bg-black/30 ">
-
+      <div className="relative blur-bg bg-black/30">
         <div className="relative min-h-[100vh] -mt-[36px] md:-mt-[72px] text-white z-[8] flex flex-col md:flex-row flex-wrap justify-around items-center">
           <ParticlesBg className="bg-black/80 absolute top-0 left-0 z-1 pointer-events-none" />
           <div className="z-[4] flex flex-col gap-4">
-            <div className="font-bold text-5xl ">CryptoMart</div>
+            <div className="font-bold text-5xl pt-[75px]">CryptoMart</div>
             <div className="mx-2">
               <p>Discover A New World of Shopping</p>
             </div>
@@ -64,7 +63,7 @@ function HomePage() {
                 href="/Products"
                 variant="solid"
                 color="primary"
-                className="inline-block m-auto flex items-center justify-center hover:text-white"
+                className="m-auto flex items-center justify-center hover:text-white"
               >
                 {" "}
                 Shop Now
@@ -89,9 +88,9 @@ function HomePage() {
               )}
             </div>
           </div>
-          <div className="z-[4]">
+          <div className="z-[4] w-full md:w-auto px-4">
             <img
-              className="md:max-w-[550px] max-w-[400px] mx-auto"
+              className="md:max-w-[550px] w-full max-w-[400px] mx-auto"
               src="/undraw_shopping_app_flsj (1).svg"
             />
           </div>
@@ -108,7 +107,7 @@ function HomePage() {
 
         {/* FAQs */}
         <div className="text-white w-full flex flex-col">
-          <div className="mx-auto md:w-[900px] w-full px-8 mb-9">
+          <div className="mx-auto md:max-w-[900px] w-full px-8 mb-9">
             <div className="text-center text-3xl my-5 py-auto">
               Frequently Asked Questions
             </div>
