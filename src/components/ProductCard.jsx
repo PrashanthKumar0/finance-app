@@ -147,7 +147,7 @@ function ProductCard({ id, url, name, price, }) {
 
 
       {/* Content */}
-      <div className="w-[300px] flex flex-col h-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-auto">
+      <div className="w-[300px] flex flex-col h-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800/70 blur-bg dark:border-gray-700 mx-auto">
         <img
           className="p-8 rounded-t-lg my-auto object-contain"
           src={url}
