@@ -1,7 +1,7 @@
 import { Button, Divider, ScrollShadow } from "@nextui-org/react";
 import React, { useRef, useState } from "react";
 import CoinCard from "../components/CoinCard";
-import { useEthereum } from "../contexts/MetamaskProvider";
+import { requestWalletConnection, useEthereum } from "../contexts/MetamaskProvider";
 import { useSnackbar } from "notistack";
 import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
@@ -21,26 +21,7 @@ function HomePage() {
       enqueueSnackbar("Install A wallet.", { variant: "error" });
       return;
     }
-
-    try {
-      enqueueSnackbar("requesting wallet.");
-      const accounts = await eth.request({ method: "eth_requestAccounts" });
-      if (accounts.length == 0) {
-        enqueueSnackbar("no accounts selected.", { variant: "warning" });
-        return;
-      }
-
-      enqueueSnackbar(`will use ${accounts[0]}`, { variant: "success" });
-      const wei_hex = await eth.request({
-        method: "eth_getBalance",
-        params: [accounts[0], "latest"],
-      });
-      const eth_bal = (parseInt(wei_hex, 16) / 10 ** 18).toFixed(4);
-
-      setBalance(eth_bal + " ETH");
-    } catch (err) {
-      enqueueSnackbar(`wallet denied`, { variant: "error" });
-    }
+    await requestWalletConnection();
   };
 
   return (
