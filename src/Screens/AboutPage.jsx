@@ -3,7 +3,7 @@ import CoinCard from "../components/CoinCard";
 
 function AboutPage() {
   return (
-    <>
+    <div className="blur-bg">
       <section className="flex items-center bg-stone-50 xl:h-screen font-poppins dark:bg-gray-800 ">
         <div className="justify-center flex-1 max-w-6xl py-4 mx-auto lg:py-6 md:px-6">
           <div className="flex pt-[75px] mb-10 flex-wrap items-center ">
@@ -109,11 +109,11 @@ function AboutPage() {
           </div>
         </div>
       </section>
-      <div className="text-5xl flex ">
+      <div className="text-5xl flex py-20">
         <div className="text-[#3b82f6] mx-auto mt-10">OUR TEAM</div>
       </div>
-      <div className="flex flex-row justify-center gap-4 flex-wrap h-[400px] mt-0 pt-0">
-        <CoinCard 
+      <div className="flex flex-row justify-center gap-4 flex-wrap min-h-[400px] mt-0 py-20 gap-y-20">
+        <CoinCard
           img="https://avatars.githubusercontent.com/u/31966594?v=4"
           name="Prashanth Kumar"
           role="Product Manger"
@@ -136,7 +136,7 @@ function AboutPage() {
         />
         {/* <CoinCard /> */}
       </div>
-    </>
+    </div>
   );
 }
 

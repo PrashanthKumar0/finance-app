@@ -6,7 +6,6 @@
   font-family: sans-serif, Arial, Inter, system-ui, Avenir, Helvetica;
   line-height: 1.5;
   font-weight: 400;
-  position: relative;
   scroll-behavior: smooth;
 }
 
@@ -15,7 +14,7 @@
 }
 
 
-#root {
+.blur-bg {
   backdrop-filter: blur(24px);
 }
 
