@@ -1,26 +1,26 @@
 import React from "react";
 
-function ProductCard() {
+function ProductCard({img, text, price, }) {
   return (
     <div>
       <div className="w-[300px] max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-auto">
         <a href="#">
           <img
             className="p-8 rounded-t-lg"
-            src="/public\pngwing.com.png"
+            src={img}
             alt="product image"
           />
         </a>
         <div className="px-5 pb-5">
           <a href="#">
             <h5 className="text-sm font-semibold tracking-tight text-gray-900 dark:text-white">
-              Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
+              {text}
             </h5>
           </a>
           
           <div className="flex items-center justify-between mt-4">
             <span className="text-xl font-bold text-gray-900 dark:text-white">
-              0.0097 BTC
+              {price}
             </span>
             <a
               href="#"

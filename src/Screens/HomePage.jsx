@@ -112,8 +112,7 @@ function HomePage() {
         <div className="flex flex-col">
           <div className="text-3xl text-white text-center mt-20">
             <h1>
-              The Best site I've visited recently, Now I don't need to take any
-              tension of my money
+              The BEST site I can shop anonymously .
             </h1>
           </div>
           <div className="mt-10 mx-auto">
@@ -132,7 +131,6 @@ function HomePage() {
       {/* Reach Us */}
       <ReachUs />
       {/* Footer */}
-      <Footer />
     </>
   );
 }
