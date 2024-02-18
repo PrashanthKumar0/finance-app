@@ -22,7 +22,7 @@ function NavBar() {
           className="ml-6 mr-auto items-center justify-between hidden w-full md:flex md:w-auto md:order-1 text-xs"
           id="navbar-user"
         >
-          <ul className="flex flex-col md:p-0 mt-4 md:space-x-4 md:flex-row md:mt-0 md:border-0 dark:border-gray-700">
+          <ul className="flex flex-col md:gap-8 md:p-0 mt-4 md:space-x-4 md:flex-row md:mt-0 md:border-0 dark:border-gray-700">
             <li>
               <a
                 href="/"

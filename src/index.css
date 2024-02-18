@@ -19,8 +19,15 @@
   backdrop-filter: blur(24px);
 }
 
+div,
+p,
+img {
+  user-select: none;
+}
+
 body {
   margin: 0;
+  user-select: none;
   background: url('https://as1.ftcdn.net/v2/jpg/02/98/36/64/1000_F_298366478_95ulqYSXZD0M1W1XmL5NttWqINXM31W3.jpg');
   background-size: contain;
   background-attachment: fixed;
@@ -29,18 +36,20 @@ body {
 * {
   outline: none !important;
 }
-*{
-  cursor:none !important;
+
+* {
+  cursor: none !important;
 }
-#cursor{
+
+#cursor {
   pointer-events: none;
-  width:25px;
-  height:25px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   filter: invert(100%) drop-shadow(0px 0px 4px #000);
   position: fixed;
   z-index: 100;
-  transform: translate(-50%,-50%) rotate(-200deg);
+  transform: translate(-50%, -50%) rotate(-200deg);
 }
 
 .scroll-down-anim {

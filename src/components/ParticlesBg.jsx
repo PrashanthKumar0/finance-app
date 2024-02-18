@@ -1,69 +1,116 @@
-import React, { useRef, useState } from 'react'
-import Particle, { rand } from './Particle';
+import { useEffect, useRef } from "react";
 
-function ParticlesBg({ className }) {
-    const [init, setInit] = useState(false);
+class Particle {
+    constructor(radius, x, y, dx, dy, color) {
+        this.radius = radius;
+        this.x = x;
+        this.y = y;
+        this.dx = dx;
+        this.dy = dy;
+        this.color = color;
+    }
 
-    const cnvs = useRef(null);
-    const then = useRef(performance.now());
-    const dimensions = useRef(null);
-    const particles = useRef([]);
-    const numParticles = 100;
+    draw(ctx) {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+    }
 
-    const engineLoop = (ctx) => {
-        requestAnimationFrame(engineLoop, ctx);
-        if (!ctx) return;
+    update($canvas) {
+        if (this.x < this.radius || this.x > $canvas.width - this.radius) {
+            this.dx *= -1;
+        }
 
-        ctx.clearRect(0, 0, innerWidth, innerHeight);
+        if (this.y < this.radius || this.y > $canvas.height - this.radius) {
+            this.dy *= -1;
+        }
 
-        const now = performance.now();
-        const dt = Math.min(0.5, now - then.current);
-        then.current = now;
+        this.x += this.dx;
+        this.y += this.dy;
+    }
+}
 
-        for (let i = 0; i < particles.current.length; i++) {
-            for (let j = 0; j < particles.current.length; j++) {
-                if (i == j) {
-                    particles.current[i].drawDot(ctx);
-                    particles.current[i].update(dt);
-                } else {
-                    // particles.current[i].connection(ctx, particles.current[j]);
+export default function ParticlesBg() {
+    const canvasRef = useRef(null);
+
+    useEffect(() => {
+        if (!canvasRef.current) {
+            throw new Error("Canvas not found");
+        }
+
+        const $canvas = canvasRef.current;
+        $canvas.width = window.innerWidth * 2;
+        $canvas.height = window.innerHeight * 2;
+
+        const ctx = $canvas.getContext("2d");
+
+        let particles = [];
+        let reqId = null;
+
+        init();
+
+        window.addEventListener("resize", handleResize);
+
+        function handleResize() {
+            $canvas.width = window.innerWidth * 2;
+            $canvas.height = window.innerHeight * 2;
+
+            init();
+        }
+
+        function init() {
+            let numParticles = Math.min(150, Math.round(($canvas.width * $canvas.height) / 10_000));
+            particles = [];
+
+            for (let i = 0; i < numParticles; ++i) {
+                let r = Math.random() * 3 + 1;
+                let x = Math.random() * ($canvas.width - r) + r;
+                let y = Math.random() * ($canvas.height - r) + r;
+                let dx = (Math.random() > 0.5 ? 1 : -1) * Math.random();
+                let dy = (Math.random() > 0.5 ? 1 : -1) * Math.random();
+
+                particles.push(new Particle(r, x, y, dx, dy, "#ddd"));
+            }
+
+            if (reqId != null) {
+                cancelAnimationFrame(reqId);
+            }
+
+            animate();
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, $canvas.width, $canvas.height);
+
+            for (let p of particles) {
+                p.draw(ctx);
+                p.update($canvas);
+            }
+
+            connect();
+            reqId = requestAnimationFrame(animate);
+        }
+
+        function connect() {
+            for (let p1 of particles) {
+                for (let p2 of particles) {
+                    let distance = Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2));
+
+                    if (distance < 150) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(221, 221, 221,${1 - distance / 150})`;
+                        ctx.lineWidth = 1;
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }
                 }
             }
         }
 
-    }
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
-    const resize = () => {
-        cnvs.current.width = innerWidth;
-        cnvs.current.height = innerHeight;
-        dimensions.current = { width: innerWidth, height: innerHeight };
-    }
-
-    const initEngine = () => {
-        if (init) return;
-
-        setInit(true);
-        addEventListener('resize', resize);
-        resize();
-
-        for (let i = 0; i < numParticles; i++) {
-            if (particles.current.length >= numParticles) {
-                break;
-            }
-            const x = rand(0, innerWidth);
-            const y = rand(0, innerHeight);
-            particles.current.push(new Particle(x, y));
-        }
-        const ctx = cnvs.current.getContext('2d');
-        console.log(particles.current);
-        // engineLoop(ctx);
-    }
-
-    if (cnvs && cnvs.current) initEngine();
-
-    return (
-        <canvas ref={cnvs} className={`block w-full h-full ${className ? className : ''}`} />
-    )
+    return <canvas className="fixed top-0 left-0 -z-10 w-screen h-screen pointer-events-none" ref={canvasRef}></canvas>;
 }
-
-export default ParticlesBg
