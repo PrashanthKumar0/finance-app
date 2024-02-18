@@ -61,7 +61,7 @@ function ProductCard({ id, url, name, price, }) {
       // openPopup();
       onOpen();
     } catch (err) {
-
+      snackbar.enqueueSnackbar("Transaction Canceled.", { variant: "warning" });
     }
   }
 
@@ -101,7 +101,7 @@ function ProductCard({ id, url, name, price, }) {
               <ModalHeader className="flex flex-col gap-1">Log in</ModalHeader>
               <ModalBody>
                 <p className="text-green-700 mb-4 text-[0.65rem] select-all">REF : {transactionAddress}</p>
-                
+
                 <label>
                   <p className="text-white mb-4 text-lg">Phone Number</p>
                   <Input placeholder="Your Phone Number" type="tel" onChange={(e) => { setPhone(e.target.value); }} />
