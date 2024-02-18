@@ -13,6 +13,7 @@ function ProductPage() {
 
   const fetchProducts = async () => {
     const prods = await api.getProducts();
+    // console.log(prods);
     setProducts(prods.products);
   }
 

@@ -64,7 +64,7 @@ function HomePage() {
                 href="/Products"
                 variant="solid"
                 color="primary"
-                className="inline-block m-auto mr-8 flex items-center justify-center hover:text-white"
+                className="inline-block m-auto flex items-center justify-center hover:text-white"
               >
                 {" "}
                 Shop Now
@@ -89,9 +89,9 @@ function HomePage() {
               )}
             </div>
           </div>
-          <div className="z-[4] flex flex-col gap-4">
+          <div className="z-[4]">
             <img
-              className="max-w-[300px]  md:max-w-[550px] max-w-[400px] mx-auto"
+              className="md:max-w-[550px] max-w-[400px] mx-auto"
               src="/undraw_shopping_app_flsj (1).svg"
             />
           </div>

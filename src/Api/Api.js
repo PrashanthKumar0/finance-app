@@ -5,6 +5,7 @@ export class Api {
     }
     async getProducts() {
         return await fetch(`${this.#url}/products`).then(r => r.json());
+        // return await fetch(`${this.#url}/products`).then(r => r.text());
     }
     async makeOrder(productId, deliveryAdderss, transactionAddress, phone) {
         const body = JSON.stringify({ productId, deliveryAdderss, transactionAddress, phone });
