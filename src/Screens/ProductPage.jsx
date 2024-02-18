@@ -6,6 +6,8 @@ function ProductPage() {
   return (
     <ScrollShadow className="h-[100vh] flex">
       <div className="pt-[100px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 mx-auto">
+        <ProductCard img="/pngwing.com.png" text="Apple Watch" price="0.0097 BTC" />
+        {/* <ProductCard />
         <ProductCard />
         <ProductCard />
         <ProductCard />
@@ -19,9 +21,7 @@ function ProductPage() {
         <ProductCard />
         <ProductCard />
         <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        <ProductCard /> */}
       </div>
     </ScrollShadow>
   );

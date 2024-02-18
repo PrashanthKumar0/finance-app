@@ -6,6 +6,7 @@ import Layout from './Layout'
 import ProductPage from './Screens/ProductPage'
 import { initCursor } from './cursor'
 
+
 function App() {
   useEffect(initCursor, []);
 
