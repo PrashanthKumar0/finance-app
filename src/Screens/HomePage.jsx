@@ -1,5 +1,5 @@
 import { Button, Divider, ScrollShadow } from "@nextui-org/react";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CoinCard from "../components/CoinCard";
 import { useEthereum } from "../contexts/MetamaskProvider";
 import { useSnackbar } from "notistack";
@@ -15,6 +15,15 @@ function HomePage() {
   const { eth } = useEthereum();
   const [balance, setBalance] = useState(null);
   const { enqueueSnackbar } = useSnackbar();
+
+  useEffect(() => {
+    setTimeout(async () => {
+      if (!('ethereum' in window)) {
+        enqueueSnackbar('Seems Like You dont have Metamask?', { variant: 'warning' });
+      }
+    }, 3000);
+  }, [eth]);
+
 
   const connectWallet = async () => {
     if (!eth) {
