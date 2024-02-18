@@ -13,6 +13,24 @@
   display: none;
 }
 
+.premium-button {
+  position: relative;
+  z-index: 2;
+}
+
+.premium-button::before {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 1px);
+  height: calc(100% + 1px);
+  background: radial-gradient(circle at 50% 50%,gold,magenta);
+  filter: blur(26px);
+  z-index: -1;
+}
 
 .blur-bg {
   backdrop-filter: blur(24px);
