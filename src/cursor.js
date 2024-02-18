@@ -14,4 +14,7 @@ addEventListener('mousemove', (e) => {
 export const initCursor = () => {
     const cursor = document.getElementById('cursor');
     cursor.style.display = "block";
+    if (/Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent)) {
+        cursor.style.opacity = '0';
+    }
 }
