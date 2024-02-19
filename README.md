@@ -52,12 +52,8 @@ To run our website, ensure you have the MetaMask browser extension installed. Si
 
 - Prashanth Kumar ([GitHub](https://github.com/PrashanthKumar0))
 - Sanskar Thakur ([GitHub](https://github.com/SanskarThakur5251))
+- Shwetank Tripathi ([GitHub](https://github.com/Shwetank-Tripathi))
+- Gajendra Kumar ([GitHub](https://github.com/Gajendra-K))
 
-## Contact Us
-
-For any inquiries or support, feel free to reach out to us:
-
-- Email: [cryptomart@example.com](mailto:cryptomart@example.com)
-- Twitter: [@CryptoMartHQ](https://twitter.com/CryptoMartHQ)
 
 Thank you for considering CryptoMart for the WebFeb Hackathon! We look forward to your feedback and support. Happy hacking! 🚀🔗💰
