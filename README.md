@@ -2,7 +2,7 @@
 
 Welcome to **CryptoMart** - revolutionizing e-commerce with blockchain technology. This readme provides essential information to get started with our project for the WebFeb Hackathon.
 
-[Live Demo](https://cryptomart-wmig-i2fdiw8hv-prashanthkumar0s-projects.vercel.app/)
+[Live Demo](https://cryptomart-tawny.vercel.app/)
 
 > Note : You will need metamask to see all features of site. Optionally run a [ganache](https://trufflesuite.com/ganache/) instance to test the app locally.
 
